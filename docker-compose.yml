@@ -1,0 +1,132 @@
+services:
+  fastp:
+    build:
+      context: ./fastp
+    container_name: fastp
+    volumes:
+      - ./fastp:/data
+    working_dir: /data
+    command: ["bash"]
+    stdin_open: true
+    tty: true
+
+  multiqc:
+    build:
+      context: ./multiqc
+    container_name: multiqc
+    volumes:
+      - ./multiqc:/data
+    working_dir: /data
+    command: ["bash"]
+    stdin_open: true
+    tty: true
+
+  star:
+    build:
+      context: ./star
+    container_name: star
+    volumes:
+      - ./star:/data
+    working_dir: /data
+    command: ["bash"]
+    stdin_open: true
+    tty: true
+
+  featurecounts:
+    build:
+      context: ./subread
+    container_name: subread
+    volumes:
+      - ./subread:/data
+    working_dir: /data
+    command: ["bash"]
+    stdin_open: true
+    tty: true
+
+  trimmomatic:
+    build:
+      context: ./trimmomatic
+    container_name: trimmomatic
+    volumes:
+      - ./trimmomatic:/data
+    working_dir: /data
+    command: ["bash"]
+    stdin_open: true
+    tty: true
+
+  seqtk:
+    build:
+      context: ./seqtk
+    container_name: seqtk
+    volumes:
+      - ./seqtk:/data
+    working_dir: /data
+    command: ["bash"]
+    stdin_open: true
+    tty: true
+
+  gffread:
+    build:
+      context: ./gffread
+    container_name: gffread
+    volumes:
+      - ./gffread:/data
+    working_dir: /data
+    command: ["bash"]
+    stdin_open: true
+    tty: true
+
+  samtools:
+    build:
+      context: ./samtools
+    container_name: samtools
+    volumes:
+      - ./samtools:/data
+    working_dir: /data
+    command: ["bash"]
+    stdin_open: true
+    tty: true
+
+  bedtools:
+    build:
+      context: ./bedtools
+    container_name: bedtools
+    volumes:
+      - ./bedtools:/data
+    working_dir: /data
+    command: ["bash"]
+    stdin_open: true
+    tty: true
+
+  RSeQC:
+    build:
+      context: ./RSeQC
+    container_name: RSeQC
+    volumes:
+      - ./RSeQC:/data
+    working_dir: /data
+    command: ["bash"]
+    stdin_open: true
+    tty: true
+
+  stringtie:
+    build:
+      context: ./stringtie
+    container_name: stringtie
+    volumes:
+      - ./stringtie:/data
+    working_dir: /data
+    command: ["bash"]
+    stdin_open: true
+    tty: true
+
+  sambamba:
+    build:
+      context: ./sambamba
+    container_name: sambamba
+    volumes:
+      - ./sambamba:/data
+    working_dir: /data
+    command: ["bash"]
+    stdin_open: true
+    tty: true
